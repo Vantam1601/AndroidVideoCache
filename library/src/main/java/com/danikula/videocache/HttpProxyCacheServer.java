@@ -73,7 +73,7 @@ public class HttpProxyCacheServer {
         this.config = checkNotNull(config);
         try {
             InetAddress inetAddress = InetAddress.getByName(PROXY_HOST);
-            this.serverSocket = new ServerSocket(0, 8, inetAddress);
+            this.serverSocket = new ServerSocket(0, 16, inetAddress);
             this.port = serverSocket.getLocalPort();
             IgnoreHostProxySelector.install(PROXY_HOST, port);
             CountDownLatch startSignal = new CountDownLatch(1);
